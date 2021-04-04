@@ -78,6 +78,8 @@
                                 <input id="remember" name="remember" type="checkbox" checked="checked">
                                 <label for="remember">I agree to the <a href="#">Privacy Policy</a></label>
                             </div>
+
+                            <div id="errors"></div>
                             
                             <button id="register" class="sign__btn" type="button">Sign up</button>
 
@@ -226,12 +228,18 @@ $(document).ready(function() {
                 method:"post",
                 dataType:"json",
                 success:function(e){
-                        window.location = 'books';
-                    // if(e.msg=="OK"){
-                    // }
-                    // else{
-                    //     alert("ERROR: "+ e.msg);
-                    // }
+                    console.log(e.msg);
+                    if(e.msg=="OK"){
+                        window.location = '/login';
+                    }
+
+                },
+                error:function(e){
+                   console.log(e.responseJSON);
+                   
+                   $.each(e.responseJSON.errors, function(key,value){
+                    $('#errors').append('<li style="color:red">'+value+'</li>');    
+                   });
                 }
             });
         }
