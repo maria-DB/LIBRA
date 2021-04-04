@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 Route::get('/', function () {
     return view('books');
 });
@@ -22,5 +28,3 @@ Route::get('books', 'App\Http\Controllers\BooksController@index')->name('books')
  Route::get('bookcatalog', 'App\Http\Controllers\CatalogController@index')->name('getCatalog');
  Route::get('aboutus', 'App\Http\Controllers\AboutController@index')->name('getAbout');
 
-
-   

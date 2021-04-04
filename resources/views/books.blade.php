@@ -69,6 +69,11 @@
 									<a href="{{ route('getAbout') }}" class="header__nav-link">About Us</a>
 								</li>
 
+
+								<li class="header__nav-item">
+									<a href="{{ route('login') }}" class="header__nav-link">Login</a>
+								</li>
+
 							
 
 						<!-- LOGIN -->
