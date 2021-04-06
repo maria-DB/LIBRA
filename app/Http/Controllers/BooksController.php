@@ -76,19 +76,16 @@ class BooksController extends Controller
         {
             $isbn = $request->get('isbn');
             $openlib = Books::searchOpenLibrary($isbn);
-            
+
+            // dd(, $openlib['ISBN:'.$isbn]['ebooks'][0]['preview_url']);
             //do it like this if there are undefined keys in the response from the api
-            if(array_key_exists('ebooks', $openlib)){
+            if(array_key_exists('ebooks',$openlib['ISBN:'.$isbn])){
                 $ebook = $openlib['ISBN:'.$isbn]['ebooks'][0]['preview_url'];
             } else {
-                if(array_key_exists('url', $openlib)){
-                    $ebook = $openlib['ISBN:'.$isbn]['url'];
-                } else {
-                    $ebook = "no url found";
-                }
+                $ebook = $openlib['ISBN:'.$isbn]['url'];
             }
 
-            if(array_key_exists('cover',$openlib)){
+            if(array_key_exists('cover',$openlib['ISBN:'.$isbn])){
                 $cover = $openlib['ISBN:'.$isbn]['cover']['large'];
             } else { $cover = $request->get('cover')."&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";}
 
