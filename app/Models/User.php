@@ -42,9 +42,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function usercore()
+    public function bookshelf()
     {
-        return $this->hasMany(Crw_usercore_view::class, 'user_id', 'id');
+        return $this->hasOne(Bookshelf::class, 'userId', 'id');
+    }
+
+    public function rating()
+    {
+        return $this->hasMany(Rating::class, 'userId', 'id');
     }
 }
 

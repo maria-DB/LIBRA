@@ -22,7 +22,10 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'author' => $this->faker->name,
+            'publish_date' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'summary' => $this->faker->realText($maxNbChars = 200, $indexSize = 2),
+            'bookId' => $this->faker->numberBetween($min = 1, $max = 10)
         ];
     }
 }

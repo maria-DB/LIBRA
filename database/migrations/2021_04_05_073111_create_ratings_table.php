@@ -14,8 +14,9 @@ class CreateRatingsTable extends Migration
     public function up()
     {
         Schema::create('ratings', function (Blueprint $table) {
-            $table->int('ratingId');
-            $table->unsignedbigIncrements('userId')->nullable();
+            $table->bigIncrements('ratingId');
+            // bigIncrements is for primary key , changed to Integer
+            $table->unsignedbigInteger('userId')->nullable();
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedbigInteger('bookId')->nullable();  
             $table->foreign('bookId')->references('bookId')->on('books')->onDelete('cascade')->onUpdate('cascade');

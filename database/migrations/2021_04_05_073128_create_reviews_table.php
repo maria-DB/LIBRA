@@ -14,7 +14,7 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->int('reviewId');
+            $table->bigIncrements('reviewId');
             $table->unsignedbigInteger('bookId')->nullable();  
             $table->foreign('bookId')->references('bookId')->on('books')->onDelete('cascade')->onUpdate('cascade');
             $table->string('author');

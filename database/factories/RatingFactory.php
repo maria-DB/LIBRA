@@ -22,7 +22,9 @@ class RatingFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'rating' => $this->faker->realText($maxNbChars = 200, $indexSize = 2),
+            'userId' => $this->faker->numberBetween($min = 1, $max = 10),
+            'bookId' => $this->faker->numberBetween($min = 1, $max = 10),
         ];
     }
 }

@@ -14,8 +14,9 @@ class CreateBookshelvesTable extends Migration
     public function up()
     {
         Schema::create('bookshelves', function (Blueprint $table) {
-            $table->int('bookshelfId');
-            $table->unsignedbigIncrements('userId')->nullable();
+            $table->bigIncrements('bookshelfId');
+            // unsignedBigIncrements is for primary key, changed to Integer
+            $table->unsignedbigInteger('userId')->nullable();
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedbigInteger('bookId')->nullable();  
             $table->foreign('bookId')->references('bookId')->on('books')->onDelete('cascade')->onUpdate('cascade');
