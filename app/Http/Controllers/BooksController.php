@@ -86,6 +86,7 @@ class BooksController extends Controller
             }
 
             if(array_key_exists('cover',$openlib['ISBN:'.$isbn])){
+                //  make the cover large or small, I think small is better because of file size and load time
                 $cover = $openlib['ISBN:'.$isbn]['cover']['large'];
             } else { $cover = $request->get('cover')."&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";}
 

@@ -7,6 +7,7 @@
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
@@ -119,13 +120,13 @@
 				<div class="col-12">
 					<div class="section__wrap">
 						<!-- section title -->
-						<h2 class="section__title">About Us</h2>
+						<h2 class="section__title">Book Review</h2>
 						<!-- end section title -->
 
 						<!-- breadcrumb -->
 						<ul class="breadcrumb">
-							<li class="breadcrumb__item"><a href="#">Home</a></li>
-							<li class="breadcrumb__item breadcrumb__item--active">About Us</li>
+							<li class="breadcrumb__item"><a href="/">Home</a></li>
+							<li class="breadcrumb__item breadcrumb__item--active">Review</li>
 						</ul>
 						<!-- end breadcrumb -->
 					</div>
@@ -140,194 +141,89 @@
 		<div class="container">
 			<div class="row">
 				<!-- section title -->
-				<div class="col-12">
+				{{-- <div class="col-12">
 					<h2 class="section__title"><b>FLIXGO</b> – Best Place for Movies</h2>
-				</div>
+				</div> --}}
 				<!-- end section title -->
 
-				<!-- section text -->
-				<div class="col-12">
-					<p class="section__text">It is a long <b>established</b> fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
-
-					<p class="section__text section__text--last-with-margin">'Content here, content here', making it look like <a href="#">readable</a> English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-				</div>
-				<!-- end section text -->
-
-				<!-- feature -->
-				<div class="col-12 col-md-6 col-lg-4">
+				{{-- <!-- feature -->
+				<div class="col-6 col-md-4">
 					<div class="feature">
 						<i class="icon ion-ios-tv feature__icon"></i>
 						<h3 class="feature__title">Ultra HD</h3>
 						<p class="feature__text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
 					</div>
 				</div>
-				<!-- end feature -->
-
+				<!-- end feature --> --}}
 				<!-- feature -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="feature">
-						<i class="icon ion-ios-film feature__icon"></i>
-						<h3 class="feature__title">Film</h3>
-						<p class="feature__text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first.</p>
-					</div>
+				<div class="col-6 col-md-4">
+					{{-- <div class="feature"> --}}
+						<!-- card -->
+						{{-- <div class="col-6 col-sm-4 col-lg-3 col-xl-2"> --}}
+							<div class="card">
+								<div class="card__cover">
+									<img src="https://covers.openlibrary.org/b/id/776820-L.jpg" alt="">
+									<a href="#" class="card__play">
+										<i class="icon ion-ios-play"></i>
+									</a>
+								</div>
+								<div class="card__content">
+									<h3 class="mb-0"><a href="#">Benched</a></h3>
+									<div class="dropdown-divider"></div>
+									<span class="feature_text">
+										<p class="mb-0">Computer</p>
+									</span>
+									<div class="dropdown-divider"></div>
+									<span class="feature_text">
+										<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+									</span>
+									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
+								</div>
+							</div>
+						{{-- </div> --}}
+						<!-- end card -->
+					{{-- </div> --}}
 				</div>
 				<!-- end feature -->
 
 				<!-- feature -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="feature">
-						<i class="icon ion-ios-trophy feature__icon"></i>
-						<h3 class="feature__title">Awards</h3>
-						<p class="feature__text">It to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining.</p>
+				<div class="col-12 col-sm-6 col-md-8">
+				<div class="container d-flex justify-content-center mt-100 mb-100">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Comments</h4>
+									<h6 class="card-subtitle">Latest Comments section by readers</h6>
+								</div>
+								{{-- start comment --}}
+								<div class="comment-widgets m-b-20">
+									<div class="d-flex flex-row comment-row ">
+										<div class="p-2"><span class="round"><img src="https://i.imgur.com/tT8rjKC.jpg" alt="user" width="50"></span></div>
+										<div class="comment-text active w-100">
+											<h5>Jonty Andrews</h5>
+											<div class="comment-footer"> <span class="date">March 13, 2020</span> <span class="label label-success">Approved</span> <span class="action-icons active"> <a href="#" data-abc="true"><i class="fa fa-pencil"></i></a> <a href="#" data-abc="true"><i class="fa fa-rotate-right text-success"></i></a> <a href="#" data-abc="true"><i class="fa fa-heart text-danger"></i></a> </span> </div>
+											<p class="m-b-5 m-t-10">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites</p>
+										</div>
+									</div>
+								</div>
+								{{-- end comment --}}
+							</div>
+							<form class="form-inline">
+								<label class="sr-only" for="inlineFormInputName2">Name</label>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="85" id="bookComment"></textarea>
+								<button type="submit" class="btn btn-primary mb-2" id="btnComment">Comment</button>
+							</form>
+						</div>
 					</div>
 				</div>
-				<!-- end feature -->
+				</div>
 
-				<!-- feature -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="feature">
-						<i class="icon ion-ios-notifications feature__icon"></i>
-						<h3 class="feature__title">Notifications</h3>
-						<p class="feature__text">Various versions have evolved over the years, sometimes by accident, sometimes on purpose.</p>
-					</div>
-				</div>
-				<!-- end feature -->
-
-				<!-- feature -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="feature">
-						<i class="icon ion-ios-rocket feature__icon"></i>
-						<h3 class="feature__title">Rocket</h3>
-						<p class="feature__text">It to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
-					</div>
-				</div>
-				<!-- end feature -->
-
-				<!-- feature -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="feature">
-						<i class="icon ion-ios-globe feature__icon"></i>
-						<h3 class="feature__title">Multi Language Subtitles </h3>
-						<p class="feature__text">Various versions have evolved over the years, sometimes by accident, sometimes on purpose.</p>
-					</div>
-				</div>
 				<!-- end feature -->
 			</div>
 		</div>
 	</section>
 	<!-- end about -->
-
-	<!-- how it works -->
-	<section class="section section--dark">
-		<div class="container">
-			<div class="row">
-				<!-- section title -->
-				<div class="col-12">
-					<h2 class="section__title section__title--no-margin">How it works?</h2>
-				</div>
-				<!-- end section title -->
-
-				<!-- how box -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="how">
-						<span class="how__number">01</span>
-						<h3 class="how__title">Create an account</h3>
-						<p class="how__text">It has never been an issue to find an old movie or TV show on the internet. However, this is not the case with the new releases.</p>
-					</div>
-				</div>
-				<!-- ebd how box -->
-
-				<!-- how box -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="how">
-						<span class="how__number">02</span>
-						<h3 class="how__title">Choose your Plan</h3>
-						<p class="how__text">It has never been an issue to find an old movie or TV show on the internet. However, this is not the case with the new releases.</p>
-					</div>
-				</div>
-				<!-- ebd how box -->
-
-				<!-- how box -->
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="how">
-						<span class="how__number">03</span>
-						<h3 class="how__title">Enjoy MovieGo</h3>
-						<p class="how__text">It has never been an issue to find an old movie or TV show on the internet. However, this is not the case with the new releases.</p>
-					</div>
-				</div>
-				<!-- ebd how box -->
-			</div>
-		</div>
-	</section>
-	<!-- end how it works -->
-
-	<!-- partners -->
-	<section class="section">
-		<div class="container">
-			<div class="row">
-				<!-- section title -->
-				<div class="col-12">
-					<h2 class="section__title section__title--no-margin">Our Partners</h2>
-				</div>
-				<!-- end section title -->
-
-				<!-- section text -->
-				<div class="col-12">
-					<p class="section__text section__text--last-with-margin">It is a long <b>established</b> fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
-				</div>
-				<!-- end section text -->
-
-				<!-- partner -->
-				<div class="col-6 col-sm-4 col-md-3 col-lg-2">
-					<a href="#" class="partner">
-						<img src="img/partners/themeforest-light-background.png" alt="" class="partner__img">
-					</a>
-				</div>
-				<!-- end partner -->
-
-				<!-- partner -->
-				<div class="col-6 col-sm-4 col-md-3 col-lg-2">
-					<a href="#" class="partner">
-						<img src="img/partners/audiojungle-light-background.png" alt="" class="partner__img">
-					</a>
-				</div>
-				<!-- end partner -->
-
-				<!-- partner -->
-				<div class="col-6 col-sm-4 col-md-3 col-lg-2">
-					<a href="#" class="partner">
-						<img src="img/partners/codecanyon-light-background.png" alt="" class="partner__img">
-					</a>
-				</div>
-				<!-- end partner -->
-
-				<!-- partner -->
-				<div class="col-6 col-sm-4 col-md-3 col-lg-2">
-					<a href="#" class="partner">
-						<img src="img/partners/photodune-light-background.png" alt="" class="partner__img">
-					</a>
-				</div>
-				<!-- end partner -->
-
-				<!-- partner -->
-				<div class="col-6 col-sm-4 col-md-3 col-lg-2">
-					<a href="#" class="partner">
-						<img src="img/partners/activeden-light-background.png" alt="" class="partner__img">
-					</a>
-				</div>
-				<!-- end partner -->
-
-				<!-- partner -->
-				<div class="col-6 col-sm-4 col-md-3 col-lg-2">
-					<a href="#" class="partner">
-						<img src="img/partners/3docean-light-background.png" alt="" class="partner__img">
-					</a>
-				</div>
-				<!-- end partner -->
-			</div>
-		</div>
-	</section>
-	<!-- end partners -->
 
 	<!-- footer -->
 	<footer class="footer">
