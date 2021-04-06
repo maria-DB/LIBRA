@@ -22,9 +22,10 @@ class BookshelfFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->word,
+            'type' => "to be read",
             'userId' => $this->faker->numberBetween($min = 1, $max = 10),
             'bookId' => $this->faker->numberBetween($min = 1, $max = 10),
+            'favorite' => "false",
         ];
     }
 }

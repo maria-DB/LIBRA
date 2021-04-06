@@ -16,14 +16,14 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('bookId');
             $table->string('title');
-            $table->string('desc');
+            $table->longText('desc');
             $table->string('isbn');
             $table->string('author');
             $table->string('genre');
             // $table->string('review');
             // $table->string('rating');
             $table->string('publisher');
-            $table->date('publish_date');
+            $table->string('publish_date');
             $table->string('cover');
             $table->string('ebook');
             $table->timestamps();

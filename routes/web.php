@@ -35,3 +35,7 @@ Route::get('books', 'App\Http\Controllers\BooksController@index')->name('books')
  Route::get('bookcatalog', 'App\Http\Controllers\CatalogController@index')->name('getCatalog');
  Route::get('aboutus', 'App\Http\Controllers\AboutController@index')->name('getAbout');
 
+Route::get('/search/book', 'App\Http\Controllers\BooksController@searchGoogleBook')->name('search.googlebook');
+Route::get('/search/book/next', 'App\Http\Controllers\BooksController@searchGoogleBookNext')->name('search.googlebookNext');
+Route::get('/search/book/back', 'App\Http\Controllers\BooksController@searchGoogleBookBack')->name('search.googlebookBack');
+Route::get('/add/book/collection/', 'App\Http\Controllers\BooksController@addToBook')->name('add.googlebook');

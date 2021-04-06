@@ -20,7 +20,8 @@ class CreateBookshelvesTable extends Migration
             $table->foreign('userId')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedbigInteger('bookId')->nullable();  
             $table->foreign('bookId')->references('bookId')->on('books')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('type');
+            $table->enum('type', ['to be read', 'on read']);
+            $table->enum('favorite', ["false", "true"]);
             $table->timestamps();
         });
     }
