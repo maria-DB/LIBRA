@@ -90,7 +90,7 @@ class BooksController extends Controller
 
             if(array_key_exists('cover',$openlib)){
                 $cover = $openlib['ISBN:'.$isbn]['cover']['large'];
-            } else { $cover = $request->get('cover');}
+            } else { $cover = $request->get('cover')."&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";}
 
             $bookId = Books::addToBook($request->title, $request->desc, $isbn, $request->get('author'), $request->get('genre'),
                                     $openlib['ISBN:'.$isbn]['publishers'][0]['name'],
@@ -99,12 +99,22 @@ class BooksController extends Controller
             $shelf = Bookshelf::addToShelf($bookId);
 
             if($shelf) {
+                echo "<script>window.setTimeout(window.close(), 8000);</script>";
                 return true;
             } else {
                 return false;
             }
+        } else {
+
+            return abort(404);
         }
 
-        return false;
+    }
+
+    public function getPopular()
+    {
+        $result = Books::getPopularBooks();
+
+        return response()->json($result);
     }
 }

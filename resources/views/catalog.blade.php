@@ -208,6 +208,20 @@
 	</div>
 	<!-- end catalog -->
 
+	<section class="section section--bg" data-bg="img/section/section.jpg">
+		<div class="container">
+			<div class="row" id="popularBooks">
+				<!-- section title -->
+				<div class="col-12">
+					<h2 class="section__title">Popular Books</h2>
+				</div>
+				<!-- end section title -->
+			</div>
+		</div>
+	</section>
+	<!-- end expected premiere -->
+
+
 	<!-- footer -->
 	<footer class="footer">
 		<div class="container">

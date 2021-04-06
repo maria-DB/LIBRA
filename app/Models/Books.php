@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Http;
+use DB;
 
 class Books extends Model
 {
@@ -93,5 +94,20 @@ class Books extends Model
             return $newbook->id;
         }
 
+    }
+
+    public static function getPopularBooks()
+    {
+        
+        $bookids = DB::select("SELECT bookId, COUNT(bookId) as 'frequency' FROM `bookshelves` GROUP BY bookId ORDER BY frequency DESC LIMIT 6");
+        $listpopular = [];
+        foreach($bookids as $books)
+        {
+            $listpopular[] = $books->bookId;
+        }
+
+        $result = Books::whereIn('bookId', $listpopular)->get();
+        
+        return $result;
     }
 }

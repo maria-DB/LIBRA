@@ -39,3 +39,4 @@ Route::get('/search/book', 'App\Http\Controllers\BooksController@searchGoogleBoo
 Route::get('/search/book/next', 'App\Http\Controllers\BooksController@searchGoogleBookNext')->name('search.googlebookNext');
 Route::get('/search/book/back', 'App\Http\Controllers\BooksController@searchGoogleBookBack')->name('search.googlebookBack');
 Route::get('/add/book/collection/', 'App\Http\Controllers\BooksController@addToBook')->name('add.googlebook');
+Route::get('/book/popular', 'App\Http\Controllers\BooksController@getPopular')->name('book.popular');

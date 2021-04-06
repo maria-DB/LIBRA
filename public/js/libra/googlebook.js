@@ -8,9 +8,27 @@ $(function(){
         },
         dataType: 'json',
         success:function(data){
+            console.log(data);
             $('#searchKeyword').val('programming');
             populateBookCards(data);
         }
+    });
+
+    $.ajax({
+        type:'GET',
+        url:'/book/popular',
+        success:function(data){
+            $.each(data, function(key, value){
+                $("#popularBooks").append('<div class="col-6 col-sm-4 col-lg-3 col-xl-2">'+
+                '<div class="card"><div class="card__cover"><img src="'+value.cover+'" alt="" height="230px">'+
+                '<a href="#" class="card__play"><i class="icon ion-ios-play"></i></a></div>'+
+                '<div class="card__content"><h3 class="card__title"><a href="#">'+value.title+'</a></h3>'+
+                '<span class="card__category"><a href="#">'+value.genre+'</a>'+
+                '</span><span class="card__rate"><a href="/add/book/collection/?title='+value.title+'&desc='+value.desc+''+
+                '&isbn='+value.isbn+'&author='+value.author+'&genre='+value.genre+'&cover='+value.cover+'" target="_blank">'+
+                '<i class="icon ion-ios-add"></i>Add to shelf</span></div></div></div>');
+            });
+        },
     });
 
     $('#searchGoogleBook').on('click', function(e){
@@ -119,8 +137,9 @@ $(function(){
             '<div class="card__content"><h3 class="card__title"><a href="#">'+value.volumeInfo.title+'</a></h3>'+
             '<span class="card__category"><a href="#">'+value.volumeInfo.categories+'</a>'+
             '</span><span class="card__rate"><a href="/add/book/collection/?title='+value.volumeInfo.title+'&desc='+desc+''+
-            '&isbn='+isbn+'&author='+author+'&genre='+value.volumeInfo.categories+'&cover='+image+'">'+
+            '&isbn='+isbn+'&author='+author+'&genre='+value.volumeInfo.categories+'&cover='+image+'" target="_blank">'+
             '<i class="icon ion-ios-add"></i>Add to shelf</span></div></div></div>');
         });
     }
+    
 });
