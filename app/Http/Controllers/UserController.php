@@ -31,4 +31,5 @@ class UserController extends Controller
     		return json_encode(array("msg"=>"OK"));
     	}
     }
+
 }
