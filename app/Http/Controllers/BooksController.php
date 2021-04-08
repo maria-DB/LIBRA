@@ -88,25 +88,26 @@ class BooksController extends Controller
             if(array_key_exists('cover',$openlib['ISBN:'.$isbn])){
                 //  make the cover large or small, I think small is better because of file size and load time
                 $cover = $openlib['ISBN:'.$isbn]['cover']['large'];
+                if($cover == "no cover"){
+                    $cover = $request->get('cover')."&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";
+                }
             } else { $cover = $request->get('cover')."&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api";}
 
             $bookId = Books::addToBook($request->title, $request->desc, $isbn, $request->get('author'), $request->get('genre'),
                                     $openlib['ISBN:'.$isbn]['publishers'][0]['name'],
                                     $openlib['ISBN:'.$isbn]['publish_date'], $cover, $ebook);
 
-            $shelf = Bookshelf::addToShelf($bookId);
-
-            if($shelf) {
-                echo "<script>window.setTimeout(window.close(), 8000);</script>";
+                                    
+            if($request->ajax()){
                 return true;
-            } else {
-                return false;
+            }else {
+                $shelf = Bookshelf::addToShelf($bookId);
+                echo "<script>window.setTimeout(window.close(), 8000);</script>";
             }
-        } else {
 
+        } else {
             return abort(404);
         }
-
     }
 
     public function getPopular()
