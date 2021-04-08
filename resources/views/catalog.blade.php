@@ -81,7 +81,7 @@
 								</li>
 
 								<li class="header__nav-item">
-									<a href="#" class="header__nav-link">{{ Auth::user()->name }} </a>
+									<a href="{{ route('getUsercatalog') }}" class="header__nav-link">{{ Auth::user()->name }} </a>
 								</li>
 
 								<div class="header__auth">

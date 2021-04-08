@@ -34,6 +34,7 @@ Route::get('books', 'App\Http\Controllers\BooksController@index')->name('books')
 //
  Route::get('bookcatalog', 'App\Http\Controllers\CatalogController@index')->name('getCatalog');
  Route::get('aboutus', 'App\Http\Controllers\AboutController@index')->name('getAbout');
+ Route::get('userdata', 'App\Http\Controllers\UserCatalogController@index')->name('getUserCatalog');
 
 Route::get('/search/book', 'App\Http\Controllers\BooksController@searchGoogleBook')->name('search.googlebook');
 Route::get('/search/book/next', 'App\Http\Controllers\BooksController@searchGoogleBookNext')->name('search.googlebookNext');
