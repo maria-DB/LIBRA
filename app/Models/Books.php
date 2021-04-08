@@ -53,6 +53,13 @@ class Books extends Model
         return $result->json();
     }
 
+    public static function getGoogleBook($isbn)
+    {
+        $result = Http::get('https://www.googleapis.com/books/v1/volumes?q='.$isbn.'&maxResults=1');
+
+        return $result->json();
+    }
+
     public static function searchOpenLibrary($isbn)
     {
         $result = Http::get('https://openlibrary.org/api/books?bibkeys=ISBN:'.$isbn.'&jscmd=data&format=json');
@@ -108,6 +115,21 @@ class Books extends Model
 
         $result = Books::whereIn('bookId', $listpopular)->get();
         
+        return $result;
+    }
+
+    public static function getDataBook($isbn)
+    {
+        $result = Books::where('isbn', $isbn)->first();
+
+        return $result;
+    }
+
+    public static function getRelatedBook($genre)
+    {
+        // change to 2 for trial to see if working
+        // change to 6 in production
+        $result = Books::where('genre', 'LIKE', '%'.$genre.'%')->paginate(2);
         return $result;
     }
 }

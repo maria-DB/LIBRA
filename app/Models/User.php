@@ -51,6 +51,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Rating::class, 'userId', 'id');
     }
+
+    public function comment()
+    {
+        return $this->hasMany(comment::class, 'userId', 'id');
+    }
 }
 
 // protected $fillable = ['name', 'username', 'email' ,'email_verified_at', 'password', 'remember_token', 'created_at' , 'updated_at'];

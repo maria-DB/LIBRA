@@ -72,21 +72,40 @@
 									<a href="{{ route('getCatalog') }}" class="header__nav-link">Books</a>
 								</li>
 
-								<li class="header__nav-item">
+								<!-- <li class="header__nav-item">
 									<a href="faq.html" class="header__nav-link">Help</a>
+								</li> -->
+
+								<li class="header__nav-item">
+									<a href="{{ route('getAbout') }}" class="header__nav-link">Reviews</a>
 								</li>
 
 								<li class="header__nav-item">
-									<a href="{{ route('getAbout') }}" class="header__nav-link">About Us</a>
+									<a href="#" class="header__nav-link">{{ Auth::user()->name }} </a>
 								</li>
 
-								<li class="header__nav-item">
+								<div class="header__auth">
+								<button class="header__search-btn" type="button">
+									<i class="icon ion-ios-search"></i>
+								</button>
+
 								@if(Auth::check())
-									<a href="{{ route('getLogout') }}" class="header__nav-link">Logout</a>
+								<a href="{{ route('getLogout') }}" class="header__sign-in" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <span>Logout</span>
+									<!-- <i class="icon ion-ios-log-in"></i> -->
+									<!-- <span>Log Out</span> -->
+								</a>
 								@else
 									<a href="{{ route('login') }}" class="header__nav-link">Login</a>
 								@endif
-								</li>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+							</div>
+
+
+
 								
 							</ul>
 						
