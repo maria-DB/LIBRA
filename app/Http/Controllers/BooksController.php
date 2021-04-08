@@ -10,9 +10,7 @@ class BooksController extends Controller
 {
     public function index()
     {
-        // changed this to catalog 
-        // changed because? gusto ni sir per page is yung API :vvv
-    	return view('catalog');
+    	return view('books');
     }
 
     public function searchGoogleBook(Request $request)

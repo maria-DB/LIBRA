@@ -305,9 +305,9 @@
 			<!-- content tabs -->
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
-					<div class="row">
+					<div id="newest"class="row">
 						<!-- card -->
-						<div class="col-6 col-sm-12 col-lg-6">
+						<!-- <div class="col-6 col-sm-12 col-lg-6">
 							<div class="card card--list">
 								<div class="row">
 									<div class="col-12 col-sm-4">
@@ -343,7 +343,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<!-- end card -->
 					</div>
 				</div>
@@ -648,6 +648,7 @@
 	<script src="js/photoswipe.min.js"></script>
 	<script src="js/photoswipe-ui-default.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/libra/home.js"></script>
 </body>
 
 </html>
