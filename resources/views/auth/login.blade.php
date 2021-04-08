@@ -42,17 +42,18 @@
                 <div class="col-12">
                     <div class="sign__content">
                         <!-- authorization form -->
-                        <form action="#" class="sign__form">
+                        <form action="{{route('login')}}" class="sign__form" method="POST">
+                            @csrf
                             <a href="index.html" class="sign__logo">
                                 <img src="img/logo.svg" alt="">
                             </a>
 
                             <div class="sign__group">
-                                <input id="email" type="text" class="sign__input" placeholder="Email">
+                                <input id="email" type="email" name="email" class="sign__input" placeholder="Email">
                             </div>
 
                             <div class="sign__group">
-                                <input id="password" type="password" class="sign__input" placeholder="Password">
+                                <input id="password" type="password" name="password" class="sign__input" placeholder="Password">
                             </div>
 
                             <div class="sign__group sign__group--checkbox">
@@ -60,7 +61,7 @@
                                 <label for="remember">Remember Me</label>
                             </div>
                             
-                            <button id="login" class="sign__btn" type="button">Sign in</button>
+                            <button id="login" class="sign__btn" type="submit">Sign in</button>
 
                             <span class="sign__text">Don't have an account? <a href="{{ route('register') }}">Sign up!</a></span>
 
@@ -87,7 +88,7 @@
     <script src="js/photoswipe-ui-default.min.js"></script>
     <script src="js/main.js"></script>
 
-<script>
+{{-- <script>
  $(document).ready(function() {
     $('#login').on('click', function() {
         var email = $('#email').val();
@@ -115,6 +116,6 @@
         });
     });
  });
-</script>
+</script> --}}
 </body>
 </html>

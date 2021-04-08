@@ -33,11 +33,12 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|string|email|max:255|unique:users',
-        //     'password' => 'required|string|confirmed|min:8',
-        // ]);
+        $validator = $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8',
+        ]);
 
 
        $user = User::create([
@@ -47,9 +48,14 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // dd($request);
-        // event(new Registered($user));
+
+        if($user){
+            $msg = "OK";
+        }  
+        else {
+            $msg = $validator->errors();
+        }
         
-        return view('books');
+        return response()->json(['msg'=>$msg]);
     }
 }

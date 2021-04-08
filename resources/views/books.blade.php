@@ -71,7 +71,11 @@
 
 
 								<li class="header__nav-item">
+								@if(Auth::check())
+									<a href="{{ route('getLogout') }}" class="header__nav-link">Logout</a>
+								@else
 									<a href="{{ route('login') }}" class="header__nav-link">Login</a>
+								@endif
 								</li>
 
 							
