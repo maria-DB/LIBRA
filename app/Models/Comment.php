@@ -18,6 +18,19 @@ class Comment extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id' , 'userId');
+        return $this->hasOne(User::class, 'id' , 'userId');
+    }
+
+    public static function getComments($bookId)
+    {
+        $result = Comment::with(['user' => function($query) { 
+                                $query->select('id', 'username');
+                            }])->where('bookId', $bookId)->get();
+        
+        // $result = Books::with(['reviews','comments.user' => function ($query) {
+        //                     $query->select('id','username');
+        //                 }])->where('bookId', $bookId)->get();
+
+        return $result;
     }
 }

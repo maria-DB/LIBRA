@@ -21,7 +21,7 @@ $(function(){
             $.each(data, function(key, value){
                 $("#popularBooks").append('<div class="col-6 col-sm-4 col-lg-3 col-xl-2">'+
                 '<div class="card"><div class="card__cover"><img src="'+value.cover+'" alt="" height="230px">'+
-                '<a href="#" class="card__play"><i class="icon ion-ios-play"></i></a></div>'+
+                '<a href="/reviews/?isbn='+value.isbn+'" class="card__play"><i class="icon ion-ios-play"></i></a></div>'+
                 '<div class="card__content"><h3 class="card__title"><a href="#">'+value.title+'</a></h3>'+
                 '<span class="card__category"><a href="#">'+value.genre+'</a>'+
                 '</span><span class="card__rate"><a href="/add/book/collection/?title='+value.title+'&desc='+value.desc+''+
@@ -133,7 +133,7 @@ $(function(){
 
             $(".book-cards").append('<div class="col-6 col-sm-4 col-lg-3 col-xl-2">'+
             '<div class="card"><div class="card__cover"><img src="'+image+'" alt="" height="230px">'+
-            '<a href="#" class="card__play"><i class="icon ion-ios-play"></i></a></div>'+
+            '<a href="/reviews/?isbn='+isbn+'" class="card__play"><i class="icon ion-ios-play"></i></a></div>'+
             '<div class="card__content"><h3 class="card__title"><a href="#">'+value.volumeInfo.title+'</a></h3>'+
             '<span class="card__category"><a href="#">'+value.volumeInfo.categories+'</a>'+
             '</span><span class="card__rate"><a href="/add/book/collection/?title='+value.volumeInfo.title+'&desc='+desc+''+

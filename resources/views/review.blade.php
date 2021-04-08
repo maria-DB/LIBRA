@@ -4,28 +4,30 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet"> 
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-	<link rel="stylesheet" href="css/nouislider.min.css">
-	<link rel="stylesheet" href="css/ionicons.min.css">
-	<link rel="stylesheet" href="css/plyr.css">
-	<link rel="stylesheet" href="css/photoswipe.css">
-	<link rel="stylesheet" href="css/default-skin.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="{{asset('css/bootstrap-reboot.min.css')}}">
+	<link rel="stylesheet" href="{{asset('css/bootstrap-grid.min.css')}}">
+	<link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.min.css')}}">
+	<link rel="stylesheet" href="{{asset('css/nouislider.min.css')}}">
+	<link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
+	<link rel="stylesheet" href="{{asset('css/plyr.css')}}">
+	<link rel="stylesheet" href="{{asset('css/photoswipe.css')}}">
+	<link rel="stylesheet" href="{{asset('css/default-skin.css')}}">
+	<link rel="stylesheet" href="{{asset('css/main.css')}}">
+	{{-- <link rel="stylesheet" href="{{asset('')}}"> --}}
 
 	<!-- Favicons -->
-	<link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32">
-	<link rel="apple-touch-icon" href="icon/favicon-32x32.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="icon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="icon/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="icon/apple-touch-icon-144x144.png">
+	<link rel="icon" type="image/png" href="{{asset('icon/favicon-32x32.png')}}" sizes="32x32">
+	<link rel="apple-touch-icon" href="{{asset('icon/favicon-32x32.png')}}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{asset('icon/apple-touch-icon-72x72.png')}}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{asset('icon/apple-touch-icon-114x114.png')}}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{asset('icon/apple-touch-icon-144x144.png')}}">
 
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -44,7 +46,7 @@
 						<div class="header__content">
 							<!-- header logo -->
 							<a href="index.html" class="header__logo">
-								<img src="img/logo.svg" alt="">
+								<img src="{{asset('img/logo.svg')}}" alt="">
 							</a>
 							<!-- end header logo -->
 
@@ -139,7 +141,7 @@
 	<!-- end header -->
 
 	<!-- page title -->
-	<section class="section section--first section--bg" data-bg="img/section/section.jpg">
+	<section class="section section--first section--bg" data-bg="{{asset('img/section/section.jpg')}}">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -172,54 +174,23 @@
 			<div class="row">
 				<!-- title -->
 				<div class="col-12">
-					<h1 class="details__title">Benched</h1>
+					<h1 class="details__title">Book Review</h1>
 				</div>
 				<!-- end title -->
 
 				<!-- content -->
 				<div class="col-10">
 					<div class="card card--details card--series">
-						<div class="row">
+						<div class="row" id="bookdetails">
 							<!-- card cover -->
-							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
-								<div class="card__cover">
-									<img src="https://covers.openlibrary.org/b/id/776820-L.jpg" alt="">
-								</div>
-							</div>
 							<!-- end card cover -->
 
 							<!-- card content -->
-							<div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-9">
-								<div class="card__content">
-									<div class="card__wrap">
-										<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-
-										<ul class="card__list">
-											<li>Computer</li>
-											<li>IT</li>
-										</ul>
-									</div>
-
-									<ul class="card__meta">
-										<li><span>Genre:</span> <a href="#">Computer</a>
-										<a href="#">Triler</a></li>
-										<li><span>Release year:</span> 2017</li>
-									</ul>
-
-									<div class="card__description card__description--details">
-										Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
-									</div>
-								</div>
-							</div>
 							<!-- end card content -->
 						</div>
 					</div>
 				</div>
-				<!-- end content -->
-
-				
-
-				
+				<!-- end content -->	
 	<!-- end details -->
 
 	<!-- content -->
@@ -229,7 +200,7 @@
 				<div class="row">
 					<div class="col-12">
 						<!-- content title -->
-						<h2 class="content__title">Discover</h2>
+						<h2 class="content__title">Section</h2>
 						<!-- end content title -->
 
 						<!-- content tabs nav -->
@@ -242,9 +213,9 @@
 								<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Reviews</a>
 							</li>
 
-							<li class="nav-item">
+							{{-- <li class="nav-item">
 								<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Photos</a>
-							</li>
+							</li> --}}
 						</ul>
 						<!-- end content tabs nav -->
 
@@ -261,7 +232,7 @@
 
 									<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Reviews</a></li>
 
-									<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Photos</a></li>
+									{{-- <li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Photos</a></li> --}}
 								</ul>
 							</div>
 						</div>
@@ -281,10 +252,10 @@
 								<!-- comments -->
 								<div class="col-12">
 									<div class="comments">
-										<ul class="comments__list">
-											<li class="comments__item">
+										<ul class="comments__list" id="comments">
+											{{-- <li class="comments__item">
 												<div class="comments__autor">
-													<img class="comments__avatar" src="img/user.png" alt="">
+													<img class="comments__avatar" src="{{asset('img/user.png')}}" alt="">
 													<span class="comments__name">John Doe</span>
 													<span class="comments__time">30.08.2018, 17:53</span>
 												</div>
@@ -299,9 +270,9 @@
 													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
 													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
 												</div>
-											</li>
+											</li> --}}
 
-											<li class="comments__item comments__item--answer">
+											{{-- <li class="comments__item comments__item--answer">
 												<div class="comments__autor">
 													<img class="comments__avatar" src="img/user.png" alt="">
 													<span class="comments__name">John Doe</span>
@@ -318,9 +289,9 @@
 													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
 													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
 												</div>
-											</li>
+											</li> --}}
 
-											<li class="comments__item comments__item--quote">
+											{{-- <li class="comments__item comments__item--quote">
 												<div class="comments__autor">
 													<img class="comments__avatar" src="img/user.png" alt="">
 													<span class="comments__name">John Doe</span>
@@ -337,9 +308,9 @@
 													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
 													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
 												</div>
-											</li>
+											</li> --}}
 
-											<li class="comments__item">
+											{{-- <li class="comments__item">
 												<div class="comments__autor">
 													<img class="comments__avatar" src="img/user.png" alt="">
 													<span class="comments__name">John Doe</span>
@@ -356,9 +327,9 @@
 													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
 													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
 												</div>
-											</li>
+											</li> --}}
 
-											<li class="comments__item">
+											{{-- <li class="comments__item">
 												<div class="comments__autor">
 													<img class="comments__avatar" src="img/user.png" alt="">
 													<span class="comments__name">John Doe</span>
@@ -375,12 +346,12 @@
 													<button type="button"><i class="icon ion-ios-share-alt"></i>Reply</button>
 													<button type="button"><i class="icon ion-ios-quote"></i>Quote</button>
 												</div>
-											</li>
+											</li> --}}
 										</ul>
 
 										<form action="#" class="form">
-											<textarea id="text" name="text" class="form__textarea" placeholder="Add comment"></textarea>
-											<button type="button" class="form__btn">Send</button>
+											<textarea id="userComment" name="text" class="form__textarea" placeholder="Add comment"></textarea>
+											<button type="button" class="form__btn" id="postComment">Send</button>
 										</form>
 									</div>
 								</div>
@@ -393,19 +364,9 @@
 								<!-- reviews -->
 								<div class="col-12">
 									<div class="reviews">
-										<ul class="reviews__list">
-											<li class="reviews__item">
-												<div class="reviews__autor">
-													<img class="reviews__avatar" src="img/user.png" alt="">
-													<span class="reviews__name">Best Marvel movie in my opinion</span>
-													<span class="reviews__time">24.08.2018, 17:53 by John Doe</span>
+										<ul class="reviews__list" id="reviews">
 
-													<span class="reviews__rating"><i class="icon ion-ios-star"></i>8.4</span>
-												</div>
-												<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-											</li>
-
-											<li class="reviews__item">
+											{{-- <li class="reviews__item">
 												<div class="reviews__autor">
 													<img class="reviews__avatar" src="img/user.png" alt="">
 													<span class="reviews__name">Best Marvel movie in my opinion</span>
@@ -425,25 +386,25 @@
 													<span class="reviews__rating"><i class="icon ion-ios-star"></i>7.5</span>
 												</div>
 												<p class="reviews__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-											</li>
+											</li> --}}
 										</ul>
 
-										<form action="#" class="form">
-											<input type="text" class="form__input" placeholder="Title">
-											<textarea class="form__textarea" placeholder="Review"></textarea>
-											<div class="form__slider">
-												<div class="form__slider-rating" id="slider__rating"></div>
-												<div class="form__slider-value" id="form__slider-value"></div>
-											</div>
-											<button type="button" class="form__btn">Send</button>
+										<form action="#" class="form" id="formRating">
+											<textarea class="form__textarea" placeholder="Review" id="userRating"></textarea>
+											<button type="button" class="form__btn" id="addRating">Send</button>
 										</form>
+											{{-- <input type="text" class="form__input" placeholder="Title"> --}}
+											{{-- <div class="form__slider"> --}}
+												{{-- <div class="form__slider-rating" id="slider__rating"></div> --}}
+												{{-- <div class="form__slider-value" id="form__slider-value"></div> --}}
+											{{-- </div> --}}
 									</div>
 								</div>
 								<!-- end reviews -->
 							</div>
 						</div>
 
-						<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
+						{{-- <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
 							<!-- project gallery -->
 							<div class="gallery" itemscope>
 								<div class="row">
@@ -503,14 +464,14 @@
 								</div>
 							</div>
 							<!-- end project gallery -->
-						</div>
+						</div> --}}
 					</div>
 					<!-- end content tabs -->
 				</div>
 
 				<!-- sidebar -->
 				<div class="col-12 col-lg-4 col-xl-4">
-					<div class="row">
+					<div class="row" id="recommend">
 						<!-- section title -->
 						<div class="col-12">
 							<h2 class="section__title section__title--sidebar">Recommendations</h2>
@@ -518,130 +479,30 @@
 						<!-- end section title -->
 
 						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-									<span class="card__category">
-										<a href="#">Action</a>
-										<a href="#">Triler</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
+						{{-- @for($i = 0; $i < 6; $i++) --}}
+							
 
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover2.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Benched</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover3.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Whitney</a></h3>
-									<span class="card__category">
-										<a href="#">Romance</a>
-										<a href="#">Drama</a>
-										<a href="#">Music</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>6.3</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover4.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Blindspotting</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-										<a href="#">Drama</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.9</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover5.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-									<span class="card__category">
-										<a href="#">Action</a>
-										<a href="#">Triler</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
-
-						<!-- card -->
-						<div class="col-6 col-sm-4 col-lg-6">
-							<div class="card">
-								<div class="card__cover">
-									<img src="img/covers/cover6.jpg" alt="">
-									<a href="#" class="card__play">
-										<i class="icon ion-ios-play"></i>
-									</a>
-								</div>
-								<div class="card__content">
-									<h3 class="card__title"><a href="#">Benched</a></h3>
-									<span class="card__category">
-										<a href="#">Comedy</a>
-									</span>
-									<span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-								</div>
-							</div>
-						</div>
-						<!-- end card -->
+						{{-- @endfor --}}
+						<!-- end card -->	
 					</div>
+					{{-- paginator --}}
+					<div class="col-12">
+						{{-- <ul class="paginator"> --}}
+							{{-- <li class="paginator__item">
+								<a href="#" id="searchBack"><i class="icon ion-ios-arrow-back"></i></a>
+							</li> --}}
+							
+							{{-- <li class="paginator__item paginator__item--active"> --}}
+								<button type="button" class="header__sign-in" id="seeMore" data-link="" data-isbn="">see more...</button>
+								<input type="hidden" id="moreLink" value="">
+							{{-- </li> --}}
+
+							{{-- <li class="paginator__item paginator__item--next">
+								<a href="#" id="searchNext"><i class="icon ion-ios-arrow-forward"></i></a>
+							</li> --}}
+						{{-- </ul> --}}
+					</div>
+					{{-- end paginator --}}
 				</div>
 				<!-- end sidebar -->
 			</div>
@@ -771,18 +632,20 @@
 	</div>
 
 	<!-- JS -->
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.mousewheel.min.js"></script>
-	<script src="js/jquery.mCustomScrollbar.min.js"></script>
-	<script src="js/wNumb.js"></script>
-	<script src="js/nouislider.min.js"></script>
-	<script src="js/plyr.min.js"></script>
-	<script src="js/jquery.morelines.min.js"></script>
-	<script src="js/photoswipe.min.js"></script>
-	<script src="js/photoswipe-ui-default.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+	<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+	<script src="{{asset('js/jquery.mousewheel.min.js')}}"></script>
+	<script src="{{asset('js/jquery.mCustomScrollbar.min.js')}}"></script>
+	<script src="{{asset('js/wNumb.js')}}"></script>
+	<script src="{{asset('js/nouislider.min.js')}}"></script>
+	<script src="{{asset('js/plyr.min.js')}}"></script>
+	<script src="{{asset('js/jquery.morelines.min.js')}}"></script>
+	<script src="{{asset('js/photoswipe.min.js')}}"></script>
+	<script src="{{asset('js/photoswipe-ui-default.min.js')}}"></script>
+	<script src="{{asset('js/main.js')}}"></script>
+{{-- libra js --}}
+	<script src="{{asset('js/libra/review.js')}}"></script>
 </body>
 
 </html>
