@@ -72,7 +72,13 @@
 									<a href="{{ route('getAbout') }}" class="header__nav-link">About Us</a>
 								</li>
 
-								
+								<li class="header__nav-item">
+								@if(Auth::check())
+									<a href="{{ route('getLogout') }}" class="header__nav-link">Logout</a>
+								@else
+									<a href="{{ route('login') }}" class="header__nav-link">Login</a>
+								@endif
+								</li>
 
 								
 							<!-- header menu btn -->
