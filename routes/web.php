@@ -49,6 +49,13 @@ Route::get('/search/book', 'App\Http\Controllers\BooksController@searchGoogleBoo
 Route::get('/home/popular', 'App\Http\Controllers\HomeController@popularbooks')->name('getHome');
 
 Route::get('/search/book/next', 'App\Http\Controllers\BooksController@searchGoogleBookNext')->name('search.googlebookNext');
+
+Route::get('/book/favorites/true', 'App\Http\Controllers\UserCatalogController@FavoritesTrue')->name('getFavoritesTrue');
+
+Route::put('/favorite', 'App\Http\Controllers\UserCatalogController@AddtoFavorites')->name('addFav');
+
+Route::get('/get/user/librarybook', 'App\Http\Controllers\UserCatalogController@getUserBooks')->name('userbooks');
+
 Route::get('/search/book/back', 'App\Http\Controllers\BooksController@searchGoogleBookBack')->name('search.googlebookBack');
 Route::get('/add/book/collection/', 'App\Http\Controllers\BooksController@addToBook')->name('add.googlebook');
 Route::get('/book/popular', 'App\Http\Controllers\BooksController@getPopular')->name('book.popular');
