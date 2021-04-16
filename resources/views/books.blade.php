@@ -184,7 +184,7 @@
 				<div class="row">
 					<div class="col-12">
 						<!-- content title -->
-						<h2 class="content__title">New items</h2>
+						<h2 class="content__title">New Release Items!</h2>
 						<!-- end content title -->
 
 						<!-- content tabs nav -->
@@ -272,9 +272,9 @@
 		<div class="container">
 			<div class="row" id="popularBooks">
 				<!-- section title -->
-				<div class="col-12">
+				<!-- <div class="col-12">
 					<h2 class="section__title">Popular Books by the Users</h2>
-				</div>
+				</div> -->
 				<!-- end section title -->
 
 				<!-- end card -->

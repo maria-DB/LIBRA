@@ -280,6 +280,38 @@
 		</div>
 	</section>
 	<!-- end content -->
+	<!-- Activity Log -->
+<section class="content">
+		<div class="content__head">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<!-- content title -->
+						<h2 class="content__title">ACTIVITY LOG</h2>
+						<!-- end content title -->
+						<div class="catalog">	
+						
+						<div class="container">
+							<div class="row" id="useractivitylog">
+								<!-- <div class="col-12">
+									<div class="comments">
+										<ul class="comments__list" id="comments">
+											 <li class="comments__item">
+												<div class="comments__autor">
+												</div>
+													<span class="comments__time">30.08.2018, 17:53</span>
+												
+												<p class="comments__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+											
+											</li>
+											<hr>
+										</ul>
+									</div>
+								</div> -->
+			</div>
+		</div>
+	</section>
+	<!-- End Activity Log -->
 
 	<!-- footer -->
 	<footer class="footer">

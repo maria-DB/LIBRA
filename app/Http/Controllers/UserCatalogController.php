@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Books;
 use App\Models\Bookshelf;
 use App\Models\User;
+use Carbon\Carbon;
 use Auth;
 
 class UserCatalogController extends Controller
@@ -39,6 +40,15 @@ class UserCatalogController extends Controller
         
         return response()->json($result);
 
+    }
+
+    public function ActLog(Request $request)
+    {
+        $result=User::with(['comment'=> function($query) {
+            $query->select('*')->where('created_at', '>=', Carbon::today()->toDateString());
+        }])->where('id', Auth::id())->get();
+
+        return response()->json($result);
     }
 
 }

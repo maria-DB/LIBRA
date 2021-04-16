@@ -41,8 +41,11 @@ Route::get('books', 'App\Http\Controllers\BooksController@index')->name('books')
 
 //
  Route::get('bookcatalog', 'App\Http\Controllers\CatalogController@index')->name('getCatalog');
- Route::get('aboutus', 'App\Http\Controllers\AboutController@index')->name('getAbout');
+ // Route::get('aboutus', 'App\Http\Controllers\AboutController@index')->name('getAbout');
  Route::get('/userdata', 'App\Http\Controllers\UserCatalogController@index')->name('getUserCatalog');
+
+ Route::get('/recommendation', 'App\Http\Controllers\AboutController@index')->name('getAbout');
+ Route::get('/get/book/filter', 'App\Http\Controllers\AboutController@filterRecommend')->name('getFilter');
 
 Route::get('/search/book', 'App\Http\Controllers\BooksController@searchGoogleBook')->name('search.googlebook');
 
@@ -51,6 +54,8 @@ Route::get('/home/popular', 'App\Http\Controllers\HomeController@popularbooks')-
 Route::get('/search/book/next', 'App\Http\Controllers\BooksController@searchGoogleBookNext')->name('search.googlebookNext');
 
 Route::get('/book/favorites/true', 'App\Http\Controllers\UserCatalogController@FavoritesTrue')->name('getFavoritesTrue');
+
+Route::get('/book/actlog', 'App\Http\Controllers\UserCatalogController@ActLog')->name('getActLog');
 
 Route::put('/favorite', 'App\Http\Controllers\UserCatalogController@AddtoFavorites')->name('addFav');
 
