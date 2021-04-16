@@ -14,10 +14,10 @@ class AboutController extends Controller
     	return view('recommendation')->with('genre',$genre);
     }
 
-    public function searchRecommend(Request $request)
+    public function filterRecommend(Request $request)
     {
     	$result=Books::where('genre', $request->genre)->get();
-    	dd($result);
-
+    	// dd($result);
+        return response()->json($result);
     }
 }

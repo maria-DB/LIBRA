@@ -173,7 +173,9 @@
 								<span class="filter__item-label">GENRE:</span>
 
 								<div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-genre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<input type="button" value="Action/Adventure">
+									{{-- everytime na nagseselect dito napupunta yung value so yung value dyan sa input
+									napapalitan ng value kung ano yung sinelect doon sa unordered list --}}
+									<input type="button" value="Filter ..." id="filterSelected">
 									<span></span>
 								</div>
 
@@ -202,7 +204,7 @@
 	<!-- catalog -->
 	<div class="catalog">
 		<div class="container">
-			<div class="row">
+			<div class="row" id="book-cards">
 				<!-- card -->
 				<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 					<div class="card">
