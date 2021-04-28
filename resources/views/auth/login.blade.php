@@ -31,7 +31,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Dmitry Volkov">
-    <title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
+    <title>LIBRA – Library Information & Book Keeping Record Access</title>
 
 </head>
 <body class="body">
@@ -44,10 +44,11 @@
                         <!-- authorization form -->
                         <form action="{{route('login')}}" class="sign__form" method="POST">
                             @csrf
-                            <a href="index.html" class="sign__logo">
-                                <img src="img/logo.svg" alt="">
-                            </a>
-
+                            <div class="sign-logo-group">
+                                <div class="sign__logo sign-logo-home">
+                                    <a href="index.html"></a>
+                                </div>
+                            </div>
                             <div class="sign__group">
                                 <input id="email" type="email" name="email" class="sign__input" placeholder="Email">
                             </div>

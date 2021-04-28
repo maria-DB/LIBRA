@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet"> 
 
@@ -216,6 +216,8 @@
 						</li>
 						{{-- <li class="paginator__item paginator__item"><a href="#" style="visibility:hidden;"></a></li> --}}
 						<li class="paginator__item paginator__item--active"><a href="#" class="disabled" id="currentPage">1</a></li>
+						<li class="paginator__item paginator__item"><a href="#" class="disabled" id="nextpage">2</a></li>
+						<li class="paginator__item paginator__item"><a href="#" class="disabled" id="backpage">3</a></li>
 						{{-- <li class="paginator__item paginator__item"><a href="#" style="visibility:hidden;" id="indexPage"></a></li> --}}
 						<li class="paginator__item paginator__item--next">
 							<a href="#" id="searchNext"><i class="icon ion-ios-arrow-forward"></i></a>

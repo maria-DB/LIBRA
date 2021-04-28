@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     public function bookshelf()
     {
-        return $this->hasOne(Bookshelf::class, 'userId', 'id');
+        return $this->hasMany(Bookshelf::class, 'userId', 'id');
     }
 
     public function rating()
