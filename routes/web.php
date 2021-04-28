@@ -66,7 +66,7 @@ Route::get('/add/book/collection/', 'App\Http\Controllers\BooksController@addToB
 Route::get('/book/popular', 'App\Http\Controllers\BooksController@getPopular')->name('book.popular');
 
 });
-
+Route::post('/userdata', 'App\Http\Controllers\UserCatalogController@avatar')->name('useravatar');
 Route::get('/reviews', 'App\Http\Controllers\ReviewController@index')->name('review.index');
 Route::get('/reviews/get/', 'App\Http\Controllers\ReviewController@getBookReview')->name('book.review');
 Route::get('/reviews/get/recommended/', 'App\Http\Controllers\ReviewController@getRecommendation')->name('book.reco');

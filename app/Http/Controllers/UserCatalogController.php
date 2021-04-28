@@ -51,4 +51,17 @@ class UserCatalogController extends Controller
         return response()->json($result);
     }
 
+    public function avatar(Request $request)
+    {
+        // dd($request->photo);
+        // $user = User::find(Auth::id());
+        if($request->has('photo')){
+            $user = User::where('id', Auth::id())->update(['photo' => $request->file('photo')->store('img', 'public')]);
+        }else{
+            return redirect("/userdata")->with('error', 'No avatar provided');
+        }
+		
+        return redirect("/userdata")->with('success', 'New Gift Added !');
+    }
+
 }

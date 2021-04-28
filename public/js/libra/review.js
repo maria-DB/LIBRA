@@ -43,7 +43,7 @@ $(function(){
                 success:function(data){
                     if(data != 0){
                         // console.log('comment if',data);
-                        commentTemplate(data[0].user.username, data[0].updated_at, data[0].comment);
+                        commentTemplate(data[0].user.username, data[0].updated_at, data[0].comment,data[0].user.photo);
                         $('#userComment').val('');
                     }
                 },
@@ -116,19 +116,22 @@ $(function(){
     function bookComments(data)
     {
         $.each(data[2],function(key,value){
-            commentTemplate(value.user.username,value.updated_at,value.comment);
+            commentTemplate(value.user.username,value.updated_at,value.comment,value.user.photo);
         }); 
     }
 
-    function commentTemplate(username,updated_at,comment){
+    function commentTemplate(username,updated_at,comment,image){
         $('#comments').append('<li class="comments__item"><div class="comments__autor">'+
-        '<img class="comments__avatar" src="/img/user.png" alt="">'+
+        '<img class="comments__avatar" src="../storage/'+image+'" alt="">'+
         '<span class="comments__name">'+username+'</span>'+
         '<span class="comments__time">'+dateConverter(updated_at)+'</span>'+
         '</div><p class="comments__text">'+comment+'</p><div class="comments__actions">'+
-        '<div class="comments__rate"><button type="button"><i class="icon ion-md-thumbs-up"></i>12</button>'+
-        '<button type="button">7<i class="icon ion-md-thumbs-down"></i></button></div></div></li>'
+        '</div></div></li>'
         );
+
+        // <div class="comments__rate"><button type="button"><i class="icon ion-md-thumbs-up"></i>12</button>'+
+        // {/* '<button type="button">7<i class="icon ion-md-thumbs-down"></i></button> */}
+
     }
 
     function dateConverter(comment_time){

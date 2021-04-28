@@ -24,7 +24,7 @@ class Comment extends Model
     public static function getComments($bookId)
     {
         $result = Comment::with(['user' => function($query) { 
-                                $query->select('id', 'username');
+                                $query->select('id', 'username', 'photo');
                             }])->where('bookId', $bookId)->get();
         
         // $result = Books::with(['reviews','comments.user' => function ($query) {

@@ -216,6 +216,8 @@
 						</li>
 						{{-- <li class="paginator__item paginator__item"><a href="#" style="visibility:hidden;"></a></li> --}}
 						<li class="paginator__item paginator__item--active"><a href="#" class="disabled" id="currentPage">1</a></li>
+						<li class="paginator__item paginator__item"><a href="#" class="disabled" id="nextpage">2</a></li>
+						<li class="paginator__item paginator__item"><a href="#" class="disabled" id="backpage">3</a></li>
 						{{-- <li class="paginator__item paginator__item"><a href="#" style="visibility:hidden;" id="indexPage"></a></li> --}}
 						<li class="paginator__item paginator__item--next">
 							<a href="#" id="searchNext"><i class="icon ion-ios-arrow-forward"></i></a>

@@ -70,6 +70,8 @@ $(function(){
                     console.log(data);
                     populateBookCards(data);
                     $('#currentPage').html(page);
+                    $('#nextpage').html(page + 1);
+                    $('#backpage').html(page + 2);
                 },
             })
         }
@@ -94,11 +96,60 @@ $(function(){
                     console.log(data);
                     populateBookCards(data);
                     $('#currentPage').html(page);
+                    $('#nextpage').html(page + 1);
+                    $('#backpage').html(page + 2);
                 },
             })
         }
 
     });
+
+    $('#nextpage').on('click',function(e){
+        var page = parseInt($('#nextpage').text());
+        var keyword = $('#searchKeyword').val();
+        if(page >= 1 && keyword != ""){
+            $.ajax({
+                type:'GET', 
+                url:'/search/book/next',
+                data:{
+                    'page':page,
+                    'index': $('#indexPage').text(),
+                    'book': keyword
+                },
+                success:function(data){
+                    console.log(data);
+                    populateBookCards(data);
+                    $('#currentPage').html(page);
+                    $('#nextpage').html(page + 1);
+                    $('#backpage').html(page + 2);
+                },
+            })
+        }
+    });
+
+    $('#backpage').on('click',function(e){
+        var page = parseInt($('#backpage').text());
+        var keyword = $('#searchKeyword').val();
+        if(page >= 1 && keyword != ""){
+            $.ajax({
+                type:'GET', 
+                url:'/search/book/next',
+                data:{
+                    'page':page,
+                    'index': $('#indexPage').text(),
+                    'book': keyword
+                },
+                success:function(data){
+                    console.log(data);
+                    populateBookCards(data);
+                    $('#currentPage').html(page);
+                    $('#nextpage').html(page + 1);
+                    $('#backpage').html(page + 2);
+                },
+            })
+        }
+    });
+
 
     function populateBookCards(data) {
         $(".book-cards").empty();

@@ -157,12 +157,17 @@
 				<!-- content -->
 				<div class="col-12 col-xl-6">
 					<div class="card card--details">
-						<h1 class="details__title">{{ Auth::user()->name }}</h1>
+						<h1 class="details__title">{{ Auth::user()->name }}</h1>	
+						<form enctype="multipart/form-data" action="{{route('useravatar')}}" method="POST">
+                        @csrf
+						<input type="file" id="photo" name="photo"><br>
+						<button type="submit" class="red">save</button>
+					  	</form>
 						<div class="row">
 							<!-- card cover -->
 							<div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
 								<div class="card__cover">
-									<img src="img/covers/cover.jpg" alt="">
+									<img id="userphoto" src="../storage/{{ Auth::user()->photo}}" alt="">
 								</div>
 
 								<div class="details__share">

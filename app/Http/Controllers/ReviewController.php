@@ -65,7 +65,7 @@ class ReviewController extends Controller
         if($result){
             // dd($result);
             $commenter = Comment::with(['user' => function($query) { 
-                        $query->select('id', 'username');
+                        $query->select('id', 'username', 'photo');
                         }])->where('commentId', $result->id)->get();
             
             return response()->json($commenter);
