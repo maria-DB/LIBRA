@@ -27,7 +27,7 @@ $(function(){
             // console.log(data);
             $.each(data[0].bookshelf, function(key,libro){
                 // console.log('outer', libro.books);
-               myfavoritetemplate(libro.books.cover, libro.books.isbn, libro.books.title);
+               myfavoritetemplate(libro.books.cover, libro.books.isbn, libro.books.title, "", libro.books.ebook);
 
         });
     }
@@ -78,10 +78,10 @@ $(function(){
 
         })
     });
-    function myfavoritetemplate(cover, isbn, title, type){
+    function myfavoritetemplate(cover, isbn, title, type="", ebook=""){
         $('#myfavorites').append('<div class="col-6 col-sm-4 col-lg-3 col-xl-2"><div class="card"><div class="card__cover"><img src="'+cover+'" alt="">'+
         '<a href="/reviews/?isbn='+isbn+'" class="card__play"><i class="icon ion-ios-play"></i></a></div> <div class="card__content">'+
-        '<h3 class="card__title"><a href="#">'+title+'</a></h3>'+
+        '<h3 class="card__title"><a href="'+ebook+'">'+title+'</a></h3>'+
         '</div></div></div>');
     }
     

@@ -22,7 +22,7 @@ $(function(){
                 $("#popularBooks").append('<div class="col-6 col-sm-4 col-lg-3 col-xl-2">'+
                 '<div class="card"><div class="card__cover"><img src="'+value.cover+'" alt="" height="230px">'+
                 '<a href="/reviews/?isbn='+value.isbn+'" class="card__play"><i class="icon ion-ios-play"></i></a></div>'+
-                '<div class="card__content"><h3 class="card__title"><a href="#">'+value.title+'</a></h3>'+
+                '<div class="card__content"><h3 class="card__title"><a href="'+value.ebook+'">'+value.title+'</a></h3>'+
                 '<span class="card__category"><a href="#">'+value.genre+'</a>'+
                 '</span><span class="card__rate"><a href="/add/book/collection/?title='+value.title+'&desc='+value.desc+''+
                 '&isbn='+value.isbn+'&author='+value.author+'&genre='+value.genre+'&cover='+value.cover+'" target="_blank">'+
@@ -181,11 +181,16 @@ $(function(){
             } else {
                 desc = value.volumeInfo.description;
             }
+            if(value.volumeInfo.previewLink === undefined || value.volumeInfo.hasOwnProperty('previewLink') === false) {
+                link = "#";
+            } else {
+                link = value.volumeInfo.previewLink;
+            }
 
             $(".book-cards").append('<div class="col-6 col-sm-4 col-lg-3 col-xl-2">'+
             '<div class="card"><div class="card__cover"><img src="'+image+'" alt="" height="230px">'+
             '<a href="/reviews/?isbn='+isbn+'" class="card__play"><i class="icon ion-ios-play"></i></a></div>'+
-            '<div class="card__content"><h3 class="card__title"><a href="#">'+value.volumeInfo.title+'</a></h3>'+
+            '<div class="card__content"><h3 class="card__title"><a href="'+link+'">'+value.volumeInfo.title+'</a></h3>'+
             '<span class="card__category"><a href="#">'+value.volumeInfo.categories+'</a>'+
             '</span><span class="card__rate"><a href="/add/book/collection/?title='+value.volumeInfo.title+'&desc='+desc+''+
             '&isbn='+isbn+'&author='+author+'&genre='+value.volumeInfo.categories+'&cover='+image+'" target="_blank">'+
